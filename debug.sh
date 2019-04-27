@@ -65,7 +65,7 @@ LVAR_IMAGE_VER="1.13"
 function _getDoesDockerImageExist() {
 	local TMP_SEARCH="$1"
 	[ -n "$2" ] && TMP_SEARCH="$TMP_SEARCH:$2"
-	TMP_AWK="$(echo -n "$1" | sed -e 's/\//\\\//g')"
+	local TMP_AWK="$(echo -n "$1" | sed -e 's/\//\\\//g')"
 	local TMP_IMGID="$(docker image ls "$TMP_SEARCH" | awk '/^'$TMP_AWK' / { print $3 }')"
 	[ -n "$TMP_IMGID" ] && return 0 || return 1
 }
