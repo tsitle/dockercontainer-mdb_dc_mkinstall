@@ -1,5 +1,9 @@
 # Bash scripts for running Docker Image mdb-mkinstall
 
+If you're just looking to run a dockerized Mailserver you may head directly to the GitHub Repository for **mdb-dc-mklive** (see link below).  
+
+--
+
 The Docker Image **mdb-mkinstall** is used for building the **mdb-install**, **mdb-mariadb** and **mdb-nginx** Docker Images.
 
 These images are required for using the Docker Image **mdb-mklive**.
