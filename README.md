@@ -39,10 +39,10 @@ In order to use this Docker Image you should also get a copy of the Docker Conta
 3. Copy the file _config-SAMPLE.sh_ to _config.sh_  
 4. Edit _config.sh_ if you want to change the defaults  
 5. run  
-``$ ./mkinstall.sh build all``  
+``$ sudo ./mkinstall.sh build all``  
 
 You can look up further options by running
-``$ ./mkinstall.sh help``  
+``$ sudo ./mkinstall.sh help``  
 
 You should now have the Docker Images **mdb-install**, **mdb-mariadb** and **mdb-nginx**.  
 You could remove the Docker Image **mdb-mkinstall** now if you wanted to.  
@@ -52,13 +52,9 @@ At this point you'll need the Docker Container Repository **mdb-dc-mklive** (see
 ## Links
 ### GitHub
 - GitHub Repository for Docker Image [mdb-mkinstall](https://github.com/tsitle/dockerimage-mdb_mkinstall)
+- GitHub Repository for Docker Container [mdb-dc-mkinstall](https://github.com/tsitle/dockercontainer-mdb_dc_mkinstall)
 - GitHub Repository for Docker Image [mdb-mklive](https://github.com/tsitle/dockerimage-mdb_mklive)
 - GitHub Repository for Docker Container [mdb-dc-mklive](https://github.com/tsitle/dockercontainer-mdb_dc_mklive)
 
 ### Docker Hub
-- [mdb-mkinstall](https://hub.docker.com/r/tsle/mdb-mkinstall "Docker Hub Repository for Docker Image mdb-mkinstall")
-- [mdb-install](https://hub.docker.com/r/tsle/mdb-install "Docker Hub Repository for Docker Image mdb-install")
-- [mdb-mariadb](https://hub.docker.com/r/tsle/mdb-mariadb "Docker Hub Repository for Docker Image mdb-mariadb")
-- [mdb-nginx](https://hub.docker.com/r/tsle/mdb-nginx "Docker Hub Repository for Docker Image mdb-nginx")
-- [mdb-mklive](https://hub.docker.com/r/tsle/mdb-mklive "Docker Hub Repository for Docker Image mdb-mklive")
-
+- Docker Hub Repositories [tsle/](https://hub.docker.com/r/tsle/)
