@@ -102,7 +102,7 @@ function _getDoesDockerImageExist() {
 	[ -n "$TMP_IMGID" ] && return 0 || return 1
 }
 
-LVAR_IMG_FULL="${LVAR_IMAGE_NAME}-$(uname -m):${LVAR_IMAGE_VER}"
+LVAR_IMG_FULL="${LVAR_IMAGE_NAME}:${LVAR_IMAGE_VER}"
 
 _getDoesDockerImageExist "${LVAR_REPO_PREFIX}/${LVAR_IMAGE_NAME}" "$LVAR_IMAGE_VER"
 if [ $? -eq 0 ]; then
