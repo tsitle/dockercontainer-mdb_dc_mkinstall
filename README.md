@@ -49,6 +49,11 @@ You could remove the Docker Image **mdb-mkinstall** now if you wanted to.
 
 At this point you'll need the Docker Container Repository **mdb-dc-mklive** (see below).
 
+## Supported CPU Architectures
+* amd64/x86_64
+* aarch64/arm64v8/arm64
+* armv7l/arm32v7/armhf
+
 ## Links
 ### GitHub
 - GitHub Repository for Docker Image [mdb-mkinstall](https://github.com/tsitle/dockerimage-mdb_mkinstall)
