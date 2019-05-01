@@ -90,7 +90,6 @@ _getCpuArch debian_dist >/dev/null || exit 1
 
 cd "$VAR_MYDIR" || exit 1
 
-LVAR_REPO_PREFIX="tsle"
 LVAR_IMAGE_NAME="mdb-mkinstall-$(_getCpuArch debian_dist)"
 LVAR_IMAGE_VER="1.13"
 
@@ -120,21 +119,10 @@ function _getDoesDockerImageExist() {
 
 LVAR_IMG_FULL="${LVAR_IMAGE_NAME}:${LVAR_IMAGE_VER}"
 
-_getDoesDockerImageExist "${LVAR_REPO_PREFIX}/${LVAR_IMAGE_NAME}" "$LVAR_IMAGE_VER"
-if [ $? -eq 0 ]; then
-	LVAR_IMG_FULL="${LVAR_REPO_PREFIX}/$LVAR_IMG_FULL"
-else
-	_getDoesDockerImageExist "$LVAR_IMAGE_NAME" "$LVAR_IMAGE_VER"
-	if [ $? -ne 0 ]; then
-		echo "$VAR_MYNAME: Trying to pull image from repository '${LVAR_REPO_PREFIX}/'..."
-		docker pull ${LVAR_REPO_PREFIX}/${LVAR_IMG_FULL}
-		if [ $? -eq 0 ]; then
-			LVAR_IMG_FULL="${LVAR_REPO_PREFIX}/$LVAR_IMG_FULL"
-		else
-			echo "$VAR_MYNAME: Error: could not pull image '${LVAR_REPO_PREFIX}/${LVAR_IMG_FULL}'. Aborting." >/dev/stderr
-			exit 1
-		fi
-	fi
+_getDoesDockerImageExist "$LVAR_IMAGE_NAME" "$LVAR_IMAGE_VER"
+if [ $? -ne 0 ]; then
+	echo "$VAR_MYNAME: Error: could not find image '${LVAR_IMG_FULL}'. Aborting." >/dev/stderr
+	exit 1
 fi
 
 # ----------------------------------------------------------
